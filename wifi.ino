@@ -31,11 +31,11 @@ void initMQTT(void)
     mqtt.setServer(BROKER_MQTT, BROKER_PORT);   //informa qual broker e porta deve ser conectado
     mqtt.setCallback(mqttCallback);            //atribui função de callback (função chamada quando qualquer informação de um dos tópicos subescritos chega)
     
-    snprintf (topicSensor1, 30, "%s%s",ID_MQTT, "/sensores/sensor1");
-    Serial.println(topicSensor1);
+    //snprintf (topicSensor1, 30, "%s%s",ID_MQTT, "/sensores/sensor1");
+    //Serial.println(topicSensor1);
 
-    snprintf (topicSats, 31, "%s%s",ID_MQTT, "/sensores/status/gps/sats");
-    Serial.println(topicSats);
+    //snprintf (topicSats, 31, "%s%s",ID_MQTT, "/sensores/status/gps/sats");
+    //Serial.println(topicSats);
 }
 
 void connectMQTT(void) 
