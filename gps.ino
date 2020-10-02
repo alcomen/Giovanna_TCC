@@ -52,13 +52,13 @@ void displayInfo(void)
     }
   }
 
-  mqtt.publish(topicGPSStatus, gps_status ? "1" : "0");
+  //mqtt.publish(topicGPSStatus, gps_status ? "1" : "0");
 
   Serial.print("Satellites: ");
   Serial.println(satelites);
   
   sprintf(sats, "%d", gps.satellites.value());
-  mqtt.publish(topicSats, sats);
+  //mqtt.publish(topicSats, sats);
 
   //if(gps.speed.isValid());
   
@@ -83,7 +83,8 @@ void displayInfo(void)
     DegMinSec(gps.location.lat(), gps.location.lng());
     
     sprintf(lat_long, "%2.6f\,%2.6f", gps.location.lat(), gps.location.lng());
-    mqtt.publish(topicGPSLoc, lat_long);
+    Serial.println(lat_long);
+    //mqtt.publish(topicGPSLoc, lat_long);
   }
   else
   {
@@ -169,5 +170,5 @@ void DegMinSec( double tot_val, double tot_val1)    /* Convert data in decimal d
   Serial.print("\"");
 
   sprintf(loc_DMS, "%d°%d'%2.4f\" %d°%d'%2.4f\"",degree, mins, seconds,degree1, mins1, seconds1);
-  mqtt.publish(topicDMS, loc_DMS);
+  //mqtt.publish(topicDMS, loc_DMS);
 }
