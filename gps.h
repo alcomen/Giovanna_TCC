@@ -14,7 +14,7 @@ const int RX2_PIN = 18, TX2_PIN = 19;
 
  char latm[10];
  char longm[20];
- char lat_long[20];
+ char lat_long[25];
  float latf;
  float longf;
  char sats[8], ground_speed[8];
